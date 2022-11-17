@@ -22,8 +22,11 @@ export default {
 
 <style scoped>
 main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;

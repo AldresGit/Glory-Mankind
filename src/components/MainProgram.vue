@@ -1,7 +1,9 @@
 <template>
-    <MenuScreen v-if="!store.getters.introStarted && !store.getters.testStarted"></MenuScreen>
-    <IntroScreen v-if="store.getters.introStarted"></IntroScreen>
-    <TestScreen v-if="store.getters.testStarted"></TestScreen>
+    <Transition>
+        <MenuScreen v-if="!store.getters.introStarted && !store.getters.testStarted"></MenuScreen>
+        <IntroScreen v-else-if="store.getters.introStarted"></IntroScreen>
+        <TestScreen v-else-if="store.getters.testStarted"></TestScreen>
+    </Transition>
 </template>
 
 <script>
@@ -28,5 +30,17 @@ export default {
 </script>
 
 <style scoped>
+.v-enter-active {
+    transition: opacity 0.8s ease;
+    transition-delay: 0.5s;
+}
 
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
 </style>
