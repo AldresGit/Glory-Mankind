@@ -1,0 +1,44 @@
+{
+    "true-false": [
+        {
+            "question": "The cows are red",
+            "answer": "False"
+        },
+        {
+            "question": "The anime industry is from Japan",
+            "answer": "True"
+        },
+        {
+            "question": "2 * 4 = 8",
+            "answer": "True"
+        },
+        {
+            "question": "Maths are not a science",
+            "answer": "False"
+        },
+        {
+            "question": "The Legend of Zelda is a videogame",
+            "answer": "True"
+        },
+        {
+            "question": "Unicorn is the national animal of scotland",
+            "answer": "True"
+        },
+        {
+            "question": "An apple is a fruit",
+            "answer": "True"
+        },
+        {
+            "question": "The diameter of the earth is 12.742 km",
+            "answer": "True"
+        },
+        {
+            "question": "1 + 1 + 1 + 1 + 1 + 1 + 1 = 8",
+            "answer": "False"
+        },
+        {
+            "question": "World War I started at 1912",
+            "answer": "False"
+        }
+    ]
+}

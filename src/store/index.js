@@ -3,7 +3,9 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     introStarted: false,
-    testStarted: false
+    testStarted: false,
+    // Borrable
+    questionTypes: []
   },
   getters: {
     introStarted(state) {
@@ -11,16 +13,21 @@ export default createStore({
     },
     testStarted(state) {
       return state.testStarted;
+    },
+    // Borrable
+    questionTypes(state) {
+      return state.questionTypes;
     }
   },
   mutations: {
     changeIntroMutation(state) {
       state.introStarted = !state.introStarted;
-      console.log("Intro Started Changed: " + state.introStarted);
     },
     changeTestMutation(state) {
       state.testStarted = !state.testStarted;
-      console.log("Test Started Changed: " + state.testStarted);
+    },
+    setQuestionTypesMutation(state, types) {
+      state.questionTypes = types;
     }
   },
   actions: {
@@ -29,8 +36,11 @@ export default createStore({
     },
     changeTestStatus(context) {
       context.commit('changeTestMutation');
+    },
+    // Borrable
+    setQuestionTypes(context, types) {
+      context.commit('setQuestionTypesMutation', types);
     }
   },
-  modules: {
-  }
+  modules: { }
 })
