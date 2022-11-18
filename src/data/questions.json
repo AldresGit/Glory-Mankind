@@ -2,43 +2,105 @@
     "true-false": [
         {
             "question": "The cows are red",
-            "answer": "False"
+            "answer": "false"
         },
         {
             "question": "The anime industry is from Japan",
-            "answer": "True"
+            "answer": "true"
         },
         {
             "question": "2 * 4 = 8",
-            "answer": "True"
+            "answer": "true"
         },
         {
             "question": "Maths are not a science",
-            "answer": "False"
+            "answer": "false"
         },
         {
             "question": "The Legend of Zelda is a videogame",
-            "answer": "True"
+            "answer": "true"
         },
         {
             "question": "Unicorn is the national animal of scotland",
-            "answer": "True"
+            "answer": "true"
         },
         {
             "question": "An apple is a fruit",
-            "answer": "True"
+            "answer": "true"
         },
         {
             "question": "The diameter of the earth is 12.742 km",
-            "answer": "True"
+            "answer": "true"
         },
         {
             "question": "1 + 1 + 1 + 1 + 1 + 1 + 1 = 8",
-            "answer": "False"
+            "answer": "false"
         },
         {
             "question": "World War I started at 1912",
-            "answer": "False"
+            "answer": "false"
+        }
+    ],
+    "slider": [
+        {
+            "question": "In soccer, how many goals are a Hat Trick?",
+            "min": 1,
+            "max": 11,
+            "answer": 3
+        },
+        {
+            "question": "A lustrum has _ years",
+            "min": 0,
+            "max": 10,
+            "answer": 5
+        },
+        {
+            "question": "What number on the P.T. does nitrogen occupy?",
+            "min": 1,
+            "max": 11,
+            "answer": 7
+        },
+        {
+            "question": "30/6+5*2",
+            "min": 5,
+            "max": 15,
+            "answer": 15
+        },
+        {
+            "question": "How many Rings of Power exist?",
+            "min": 10,
+            "max": 20,
+            "answer": 20
+        },
+        {
+            "question": "The Pikachu number in Pokedex is...",
+            "min": 22,
+            "max": 32,
+            "answer": 25
+        },
+        {
+            "question": "At what age do you retire?",
+            "min": 60,
+            "max": 70,
+            "answer": 67
+        },
+        {
+            "question": "How many swords does Zoro from One Piece wield?",
+            "min": 1,
+            "max": 11,
+            "answer": 3
+        },
+        {
+            "question": "There are _ Dark souls games",
+            "min": 0,
+            "max": 10,
+            "answer": 3
+        },
+        {
+            "question": "Sound travels at _ meters per second",
+            "min": 340,
+            "max": 350,
+            "answer": 343
         }
     ]
 }

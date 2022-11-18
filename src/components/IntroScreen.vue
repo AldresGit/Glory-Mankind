@@ -1,13 +1,12 @@
 <template>
     <main>
         <h2>This is the last chance of humanity</h2>
-        <p>(We are very gentle)</p>
+        <p>Pay attention to Help-bot</p>
 
         <button v-if="actualMessage < (messages.length - 1)" @click="nextMessage">Next</button>
         <button v-if="actualMessage >= (messages.length - 1)" @click="startTest">Let's get this done</button>
 
         <BotDialog :message="messages[actualMessage].text" :mode="messages[actualMessage].mode"></BotDialog>
-        <!-- <h4>{{ messages[actualMessage].text }}</h4> -->
     </main>
 
 </template>
@@ -83,19 +82,15 @@ h2 {
     margin: 10px;
 }
 
-h4 {
-    font-family: "PressStart2P", Helvetica, Arial, sans-serif;
-    margin: 10px;
-}
-
 p {
     font-family: "PressStart2P", Helvetica, Arial, sans-serif;
+    margin: 5px;
 }
 
 button {
     width: fit-content;
     padding: 20px 30px;
-    margin: 30px;
+    margin: 20px;
 
     font-family: "Abel", Arial, sans-serif;
     font-size: 24px;

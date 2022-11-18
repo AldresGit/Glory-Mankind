@@ -75,7 +75,7 @@ h4 {
 }
 
 .red-text {
-    color: #ab1d1d;
+    color: #c33939;
 }
 
 .image-container {

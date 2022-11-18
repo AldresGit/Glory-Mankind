@@ -4,8 +4,8 @@ export default createStore({
   state: {
     introStarted: false,
     testStarted: false,
-    // Borrable
-    questionTypes: []
+    actualAnswer: '',
+    answers: []
   },
   getters: {
     introStarted(state) {
@@ -14,9 +14,11 @@ export default createStore({
     testStarted(state) {
       return state.testStarted;
     },
-    // Borrable
-    questionTypes(state) {
-      return state.questionTypes;
+    actualAnswer(state) {
+      return state.actualAnswer;
+    },
+    answers(state) {
+      return state.answers;
     }
   },
   mutations: {
@@ -26,8 +28,14 @@ export default createStore({
     changeTestMutation(state) {
       state.testStarted = !state.testStarted;
     },
-    setQuestionTypesMutation(state, types) {
-      state.questionTypes = types;
+    setActualAnswerMutation(state, answer) {
+      state.actualAnswer = answer;
+    },
+    addAnswerMutation(state, answer) {
+      state.answers.push(answer);
+    },
+    deleteAnswersMutation(state) {
+      state.answers = [];
     }
   },
   actions: {
@@ -37,9 +45,14 @@ export default createStore({
     changeTestStatus(context) {
       context.commit('changeTestMutation');
     },
-    // Borrable
-    setQuestionTypes(context, types) {
-      context.commit('setQuestionTypesMutation', types);
+    changeActualAnswer(context, answer) {
+      context.commit('setActualAnswerMutation', answer);
+    },
+    addAnswer(context, answer) {
+      context.commit('addAnswerMutation', answer);
+    },
+    deleteAnswers(context) {
+      context.commit('deleteAnswersMutation');
     }
   },
   modules: { }
