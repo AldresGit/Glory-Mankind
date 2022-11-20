@@ -49,7 +49,7 @@ export default {
             } else if(questionType == 'slider') {
                 botText = 'A Slider question, drag the handler to the answer';
             } else {
-                botText = 'Select the correct answer between 4 options';
+                botText = 'A unknown type of question, that is weird...';
             }
             return botText;
         } else {
@@ -83,7 +83,7 @@ export default {
   methods: {
     randomizeQuestions() {
         const TEST_QUESTIONS = 10;
-        const QUESTION_TYPE = ['slider', 'true-false', 'select', 'write'];
+        const QUESTION_TYPE = ['slider', 'true-false'];
         for(let i = 0; i < TEST_QUESTIONS; i++) {
             let modeInt = Math.floor(Math.random() * 2);
             this.questionTypes.push(QUESTION_TYPE[modeInt]);
