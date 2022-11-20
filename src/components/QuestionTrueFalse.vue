@@ -34,28 +34,17 @@ export default {
   },
   computed: {
     getQuestion() {
-        console.log("Actual Question: " + this.actualQuestion + ", Questions Answered: " + this.questionsAnswered);
         return this.questions[this.mode][this.actualQuestion].question;
     }
   },
   updated() {
     if(this.actualQuestion == this.questionsAnswered) {
-        // Actualizar state
-        console.log("-- Update desde True False --");
         this.$store.dispatch('changeActualAnswer', this.userAnswer);
-    } else if (this.actualQuestion < this.questionsAnswered) {
-        // Get response of this
-        console.log("-- Updated para atras desde True False --");
     }
   },
   mounted() {
     if(this.actualQuestion == this.questionsAnswered) {
-        // Actualizar state
-        console.log("-- Mounted desde True False --");
         this.$store.dispatch('changeActualAnswer', this.userAnswer);
-    } else if (this.actualQuestion < this.questionsAnswered) {
-        // Get response of this
-        console.log("-- Mounted para atras desde True False --");
     }
   }
 }

@@ -1,8 +1,9 @@
 <template>
     <Transition>
         <MenuScreen v-if="!store.getters.introStarted && !store.getters.testStarted"></MenuScreen>
-        <IntroScreen v-else-if="store.getters.introStarted"></IntroScreen>
-        <TestScreen v-else-if="store.getters.testStarted"></TestScreen>
+        <IntroScreen v-else-if="store.getters.introStarted && !store.getters.testStarted"></IntroScreen>
+        <TestScreen v-else-if="!store.getters.introStarted && store.getters.testStarted"></TestScreen>
+        <ResultScreen v-else-if="store.getters.introStarted && store.getters.testStarted"></ResultScreen>
     </Transition>
 </template>
 
@@ -11,6 +12,7 @@ import { useStore } from 'vuex';
 import store from '../store/index.js';
 import IntroScreen from './IntroScreen.vue';
 import MenuScreen from './MenuScreen.vue';
+import ResultScreen from './ResultScreen.vue';
 import TestScreen from './TestScreen.vue';
 
 export default {
@@ -20,7 +22,7 @@ export default {
             store: useStore()
         }
     },
-    components: { MenuScreen, IntroScreen, TestScreen },
+    components: { MenuScreen, IntroScreen, TestScreen, ResultScreen },
     methods: {
         printStore() {
             console.log(store);

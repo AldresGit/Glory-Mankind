@@ -42,18 +42,17 @@ export default {
   computed: {
     getDialog() {
         if(!this.answer) {
+            let botText = '';
             let questionType = this.questionTypes[this.actualQuestion];
-            // console.log("Actual Question: " + this.actualQuestion + ", Questions Answered: " + this.questionsAnswered);
-            return this.questions[questionType][this.actualQuestion].question;
+            if(questionType == 'true-false') {
+                botText = 'True or False question, select the correct one';
+            } else if(questionType == 'slider') {
+                botText = 'A Slider question, drag the handler to the answer';
+            } else {
+                botText = 'Select the correct answer between 4 options';
+            }
+            return botText;
         } else {
-            // Get the answer from state
-            /*
-            console.log('-- Respuestas --');
-            console.log(this.$store.getters.answers);
-            console.log('-- Respuesta actual --');
-            console.log(this.$store.getters.answers[this.actualQuestion]);
-            */
-            // Change this for the answer
             let userAnswer = this.$store.getters.answers[this.actualQuestion];
             let botText = ''
             if(userAnswer.result == 'Correct') {
@@ -97,6 +96,7 @@ export default {
     },
     checkAnswer() {
         let questionType = this.questionTypes[this.actualQuestion];
+        let questionText = this.questions[questionType][this.actualQuestion].question;
         let userAnswer = this.$store.getters.actualAnswer.toString();
         let correctAnswer = this.questions[questionType][this.actualQuestion].answer;
         let result = "Wrong";
@@ -104,6 +104,7 @@ export default {
             result = "Correct";
         }
         let answerData = {
+            questionText: questionText,
             userAnswer: userAnswer,
             correctAnswer: correctAnswer,
             result: result
@@ -122,7 +123,6 @@ export default {
     },
     endTest() {
         this.$store.dispatch('changeIntroStatus');
-        this.$store.dispatch('changeTestStatus');
     }
   }
 }
@@ -136,7 +136,7 @@ main {
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
 }
 
@@ -161,6 +161,9 @@ button:disabled {
 }
 
 @media (max-width: 600px) {
+    main {
+        justify-content: flex-start;
+    }
     button {
         padding: 10px 15px;
         margin: 15px;
@@ -169,6 +172,9 @@ button:disabled {
 }
 
 @media (min-width: 601px) {
+    main {
+        justify-content: center;
+    }
     button {
         padding: 20px 30px;
         margin: 30px;

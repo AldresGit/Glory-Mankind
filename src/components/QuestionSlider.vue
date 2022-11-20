@@ -32,14 +32,12 @@ export default {
   methods: {
     changeAnswer() {
         if(this.actualQuestion == this.questionsAnswered) {
-            console.log("-- Update desde Slider --");
             this.$store.dispatch('changeActualAnswer', this.userAnswer);
         }
     }
   },
   computed: {
     getQuestion() {
-        console.log("Actual Question: " + this.actualQuestion + ", Questions Answered: " + this.questionsAnswered);
         return this.questions[this.mode][this.actualQuestion].question;
     },
     getMin() {
@@ -51,22 +49,12 @@ export default {
   },
   updated() {
     if(this.actualQuestion == this.questionsAnswered) {
-        // Actualizar state
-        console.log("-- Update desde Slider --");
         this.$store.dispatch('changeActualAnswer', this.userAnswer);
-    } else if (this.actualQuestion < this.questionsAnswered) {
-        // Get response of this
-        console.log("-- Updated para atras desde True False --");
     }
   },
   mounted() {
     if(this.actualQuestion == this.questionsAnswered) {
-        // Actualizar state
-        console.log("-- Mounted desde Slider --");
         this.$store.dispatch('changeActualAnswer', this.userAnswer);
-    }  else if (this.actualQuestion < this.questionsAnswered) {
-        // Get response of this
-        console.log("-- Mounted para atras desde Slider --");
     }
   }
 }
