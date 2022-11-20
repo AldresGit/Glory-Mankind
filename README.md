@@ -1,6 +1,9 @@
 # glory_mankind
 
-## A simple exercise to practise Vue 3 development.
+A simple exercise to practise Vue 3 development.
+
+### Firebase deployment
+[Glory to the Mankind](https://glory-mankind.web.app/).
 
 ## Project setup
 ```
